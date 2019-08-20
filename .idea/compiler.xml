@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gmallapi" />
+        <module name="gmallconsumer" />
+        <module name="gmallprovider" />
+        <module name="gmallutils" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gmallapi" options="-parameters" />
+      <module name="gmallconsumer" options="-parameters" />
+      <module name="gmallprovider" options="-parameters" />
+      <module name="gmallutils" options="-parameters" />
+    </option>
+  </component>
+</project>
