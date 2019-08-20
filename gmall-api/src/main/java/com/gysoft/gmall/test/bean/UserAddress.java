@@ -1,4 +1,4 @@
-package com.gysoft.gmall.bean;
+package com.gysoft.gmall.test.bean;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

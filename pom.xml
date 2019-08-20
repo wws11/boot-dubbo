@@ -19,6 +19,8 @@
         <module>gmall-utils</module>
         <module>gmall-provider</module>
         <module>gmall-consumer</module>
+        <module>gmall-cart-web</module>
+        <module>gmall-cart-service</module>
     </modules>
     <packaging>pom</packaging>
 

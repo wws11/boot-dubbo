@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gmallapi" />
+        <module name="gmallcartservice" />
+        <module name="gmallcartweb" />
         <module name="gmallconsumer" />
         <module name="gmallprovider" />
         <module name="gmallutils" />
@@ -16,6 +18,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gmallapi" options="-parameters" />
+      <module name="gmallcartservice" options="-parameters" />
+      <module name="gmallcartweb" options="-parameters" />
       <module name="gmallconsumer" options="-parameters" />
       <module name="gmallprovider" options="-parameters" />
       <module name="gmallutils" options="-parameters" />

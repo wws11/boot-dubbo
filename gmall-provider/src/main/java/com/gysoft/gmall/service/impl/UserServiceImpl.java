@@ -1,8 +1,8 @@
 package com.gysoft.gmall.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.gysoft.gmall.api.UserService;
-import com.gysoft.gmall.bean.UserAddress;
+import com.gysoft.gmall.test.api.UserService;
+import com.gysoft.gmall.test.bean.UserAddress;
 
 import java.util.Collections;
 import java.util.List;

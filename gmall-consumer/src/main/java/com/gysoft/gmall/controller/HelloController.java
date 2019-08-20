@@ -1,8 +1,8 @@
 package com.gysoft.gmall.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.gysoft.gmall.api.UserService;
-import com.gysoft.gmall.bean.UserAddress;
+import com.gysoft.gmall.test.api.UserService;
+import com.gysoft.gmall.test.bean.UserAddress;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +17,11 @@ import java.util.List;
 @RestController
 public class HelloController {
     @Reference
-    private UserService  userService;
+    private UserService userService;
     @GetMapping("/hello/{userId}")
     @ApiOperation(value = "测试dubbo服务环境", notes = "测试dubbo服务环境", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<UserAddress>  getUserAdress(@PathVariable String userId){
-        List<UserAddress> ssffsfs = userService.getUserAddressList("userId");
-        return ssffsfs;
+        List<UserAddress> userAddresses = userService.getUserAddressList("userId");
+        return userAddresses;
     }
 }

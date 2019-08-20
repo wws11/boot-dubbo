@@ -1,3 +1,2 @@
-com\gysoft\gmall\bean\UserAddress.class
-com\gysoft\gmall\api\OrderService.class
-com\gysoft\gmall\api\UserService.class
+com\gysoft\gmall\cart\api\CartApiService.class
+com\gysoft\gmall\test\bean\UserAddress.class
