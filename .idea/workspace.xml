@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="69b322c5-a33e-4995-85e7-c72797f5957d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/gmall-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gmall-cart-service/src/test/java/com/gysoft/gmall/test/CartServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/dao/SkuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/pojo/Sku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mybatis/mapper/SkuDaoMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gmall-consumer/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/GmallWebApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/controller/HelloController.java" afterDir="false" />
@@ -25,10 +26,24 @@
       <change beforePath="$PROJECT_DIR$/../bug/bug笔记.doc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../bug/~$bug笔记.doc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../git的一些操作.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-api/target/classes/META-INF/gmallapi.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-api/target/gmall-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-api/target/gmall-api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cart-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-consumer/target/classes/com/gysoft/gmall/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-consumer/target/classes/com/gysoft/gmall/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-consumer/target/gmall-consumer-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-consumer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-consumer/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-provider/target/classes/com/gysoft/gmall/DubboProducerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-provider/target/classes/com/gysoft/gmall/DubboProducerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-provider/target/gmall-provider-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-provider/target/gmall-provider-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-provider/target/gmall-provider-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-provider/target/gmall-provider-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-provider/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-provider/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-utils/target/gmall-utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-utils/target/gmall-utils-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-utils/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-utils/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gysoft/gy开发.doc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../gysoft/新建文本文档.txt" beforeDir="false" />
@@ -311,12 +326,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="-51">
+              <caret selection-end-line="4" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -324,18 +348,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gmall-cart-service/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="119">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="21" />
             </state>
           </provider>
           <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/test/java/com/gysoft/gmall/test/CartServiceApplicationTests.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/mybatis/mapper/SkuDaoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="85">
+              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/pojo/Sku.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -343,21 +391,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1291">
-              <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+            <state relative-caret-position="-71">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
             </state>
           </provider>
           <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="233">
+              <caret line="27" column="69" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="69" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.5.RELEASE/spring-boot-autoconfigure-2.0.5.RELEASE.jar!/org/springframework/boot/autoconfigure/jdbc/DataSourceAutoConfiguration.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-246">
+              <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -365,54 +423,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="272">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-utils/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-            </state>
-          </provider>
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/RedisConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-cart-web/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-            </state>
-          </provider>
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
     </leaf>
@@ -429,6 +446,8 @@
     <findStrings>
       <find>lombok</find>
       <find>success</find>
+      <find>url</find>
+      <find>isValid</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -440,7 +459,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/api/api/UserAddress.java" />
         <option value="$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/api/api/OrderService.java" />
         <option value="$PROJECT_DIR$/gmall-provider/src/main/resources/provider.xml" />
         <option value="$PROJECT_DIR$/gmall-provider/src/main/java/BootUserServiceProviderApplication.java" />
@@ -464,24 +482,34 @@
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/CartApiServiceImpl.java" />
         <option value="$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/gmall/test/api/UserService.java" />
         <option value="$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/controller/HelloController.java" />
-        <option value="$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java" />
         <option value="$PROJECT_DIR$/gmall-cart-web/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/controller/CartWebController.java" />
         <option value="$PROJECT_DIR$/gmall-provider/src/main/java/com/gysoft/gmall/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java" />
         <option value="$PROJECT_DIR$/gmall-provider/src/main/java/com/gysoft/gmall/DubboProducerApplication.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/GmallRedisConfig.java" />
         <option value="$PROJECT_DIR$/gmall-utils/src/main/java/com/gysoft/gmall/redis/RedisUtil.java" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/test/java/com/gysoft/gmall/test/MallTinyApplicationTests.java" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/MyRedisConfig.java" />
         <option value="$PROJECT_DIR$/gmall-cart-web/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-cart-service/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-utils/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/test/java/com/gysoft/gmall/test/CartServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mapper/CityMapper.xml" />
+        <option value="$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/gmall/cart/bean/SkuInfo.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/pojo/SkuInfo.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mapper/SkuMapper.xml" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mabatis/mybatis.cfg.xml" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/dao/SkuDao.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mabatis/mapper/SkuDaoMapper.xml" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/pojo/Sku.java" />
+        <option value="$PROJECT_DIR$/gmall-cart-service/src/main/resources/mybatis/mapper/SkuDaoMapper.xml" />
       </list>
     </option>
   </component>
@@ -561,7 +589,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gmall" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gmallparent" type="b2602c69:ProjectViewProjectNode" />
@@ -584,6 +612,15 @@
             <path>
               <item name="gmallparent" type="b2602c69:ProjectViewProjectNode" />
               <item name="gmallparent" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-cart-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gmallparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gmallparent" type="462c0819:PsiDirectoryNode" />
               <item name="gmall-cart-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -619,17 +656,31 @@
             <path>
               <item name="gmallparent" type="b2602c69:ProjectViewProjectNode" />
               <item name="gmallparent" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-utils" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-cart-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gmallparent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gmallparent" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-cart-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
@@ -638,24 +689,28 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566300378190" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566354742521" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_191/bin/jvisualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.gysoft.gmall.test" />
-      <recent name="com.gysoft.gmall" />
-      <recent name="com.gysoft.api.bean" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\学习\gmallparent\gmall-cart-service\src\main\java\com\gysoft\gmall\config" />
       <recent name="F:\学习\gmallparent\gmall-cart-web\src\main\resources" />
       <recent name="F:\学习\gmallparent\gmall-cart-service\src\main\resources" />
       <recent name="F:\学习\gmallparent" />
       <recent name="F:\学习\gmallparent\gmall-consumer\src\main\java\com\gysoft\gmall" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gysoft.gmall.pojo" />
+      <recent name="com.gysoft.gmall.test" />
+      <recent name="com.gysoft.gmall" />
+      <recent name="com.gysoft.api.bean" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\学习\gmallparent\gmall-cart-service\src\main\resources\mabatis\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -696,6 +751,10 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.gysoft.gmall.DubboCartServiceApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jre1.8.0_191" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -739,6 +798,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.CartServiceApplicationTests.testRedis" />
+      <item itemvalue="Spring Boot.DubboCartServiceApplication" />
+      <item itemvalue="Spring Boot.DubboProducerApplication" />
+      <item itemvalue="Spring Boot.GmallCartWebApplication" />
+      <item itemvalue="Spring Boot.GmallWebApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.DubboCartServiceApplication" />
@@ -759,7 +825,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566259028172</updated>
-      <workItem from="1566259032043" duration="29171000" />
+      <workItem from="1566259032043" duration="33951000" />
+      <workItem from="1566347462338" duration="6670000" />
     </task>
     <servers />
   </component>
@@ -784,58 +851,47 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29171000" />
+    <option name="totallyTimeSpent" value="40621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="404" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.32976446" />
-      <window_info id="Web" side_tool="true" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Run" weight="0.47326508" />
-      <window_info anchor="bottom" id="Terminal" weight="0.4175199" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32992035" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Run with VisualVM" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Find" />
-      <window_info anchor="bottom" id="Debug with VisualVM" />
-      <window_info active="true" anchor="bottom" id="Debug" visible="true" weight="0.5403868" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Ant Build" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="BPMNPalette" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info id="Designer" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.32976446" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Structure" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="0" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.47326508" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.4175199" />
+      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="5" weight="0.32992035" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="7" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Find" order="11" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="12" />
+      <window_info anchor="bottom" id="Debug" order="13" visible="true" weight="0.35039818" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Ant Build" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="BPMNPalette" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Bean Validation" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -847,97 +903,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/AbstractSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Float.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="462" selection-start-line="462" selection-end-line="462" />
-          <folding>
-            <element signature="e#18434#18435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="457" selection-start-line="457" selection-end-line="457" />
-          <folding>
-            <element signature="e#24329#24330#0" expanded="true" />
-            <element signature="e#24394#24395#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/LinkedHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="348" selection-start-line="348" selection-end-line="348" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/HashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
-          <folding>
-            <element signature="e#6137#6138#0" expanded="true" />
-            <element signature="e#8064#8065#0" expanded="true" />
-            <element signature="e#8112#8113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/LinkedHashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="154" selection-start-line="154" selection-end-line="154" />
-          <folding>
-            <element signature="e#6162#6163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-          <folding>
-            <element signature="e#28358#28359#0" expanded="true" />
-            <element signature="e#28412#28413#0" expanded="true" />
-            <element signature="e#28501#28502#0" expanded="true" />
-            <element signature="e#28566#28567#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="356" selection-start-line="356" selection-end-line="356" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -982,9 +947,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/resources/application.yml" />
     <entry file="file://$PROJECT_DIR$/gmall-api/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1003,16 +966,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/gmall/api/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/gmall/api/UserService.java" />
     <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1020,35 +974,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-utils/src/main/java/com/gysoft/gmall/webscoket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/controller/ChatRoomServerEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/utils/WebSocketUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-utils/src/main/java/com/gysoft/gmall/webscoket.java" />
+    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/controller/ChatRoomServerEndpoint.java" />
+    <entry file="file://$PROJECT_DIR$/gmall-consumer/src/main/java/com/gysoft/gmall/utils/WebSocketUtils.java" />
     <entry file="file://$PROJECT_DIR$/gmall-consumer/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1069,13 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="31" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1174,96 +1095,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-utils/src/main/java/com/gysoft/gmall/redis/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1134#1135#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1558#1588#0" expanded="true" />
-            <element signature="e#2047#2048#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
-            <element signature="e#3925#3926#0" expanded="true" />
-            <element signature="e#4059#4060#0" expanded="true" />
-            <element signature="e#4121#4122#0" expanded="true" />
-            <element signature="e#6105#6106#0" expanded="true" />
-            <element signature="e#6165#6166#0" expanded="true" />
-            <element signature="e#6347#6348#0" expanded="true" />
-            <element signature="e#6414#6415#0" expanded="true" />
-            <element signature="e#6612#6613#0" expanded="true" />
-            <element signature="e#6686#6687#0" expanded="true" />
-            <element signature="e#6861#6862#0" expanded="true" />
-            <element signature="e#6936#6937#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/GmallRedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="81" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/controller/CartWebController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/MyRedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1717#1733#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1291">
-          <caret line="79" column="24" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-utils/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-utils/src/main/java/com/gysoft/gmall/redis/RedisUtil.java" />
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/GmallRedisConfig.java" />
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/MyRedisConfig.java" />
     <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/test/java/com/gysoft/gmall/test/CartServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1271,47 +1105,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/config/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+        <state relative-caret-position="798">
+          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/gmall-utils/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="380">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/mapper.CityMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/gmall-api/src/main/java/com/gysoft/gmall/cart/bean/SkuInfo.java" />
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/dao/SkuDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/mybatis/mybatis.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/controller/CartWebController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar!/com/mysql/jdbc/JDBC4Connection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/jre/lib/rt.jar!/java/sql/Connection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#3667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.5.RELEASE/spring-boot-autoconfigure-2.0.5.RELEASE.jar!/org/springframework/boot/autoconfigure/jdbc/DataSourceAutoConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-246">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/DubboCartServiceApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-web/src/main/java/com/gysoft/gmall/GmallCartWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="27" column="69" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="69" />
+          <folding>
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/service/impl/CartApiServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="4">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret selection-end-line="4" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/java/com/gysoft/gmall/pojo/Sku.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-cart-service/src/main/resources/mybatis/mapper/SkuDaoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
         </state>
       </provider>
     </entry>
