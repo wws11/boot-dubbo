@@ -8,7 +8,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
+
+import java.text.Collator;
+import java.util.*;
 
 /**
  * @author 魏文思
@@ -24,4 +26,20 @@ public class HelloController {
         List<UserAddress> userAddresses = userService.getUserAddressList("userId");
         return userAddresses;
     }
+
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("10号楼", "1地下室", "1号楼", "5号楼", "8号楼", "7号楼", "6号楼", "9号楼","11号楼", "测试","aaa","嘿嘿","10单元","bbb");
+        Collections.sort(list, (o1, o2) -> {
+            int flag = o1.length() - o2.length();
+            if(flag==0){
+                Collator instance = Collator.getInstance(Locale.CHINA);
+                flag = instance.compare(o1, o2);
+            }
+            return  flag;
+
+        });
+        System.out.println(list);
+    }
+
 }
+
